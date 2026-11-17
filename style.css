@@ -1,0 +1,1262 @@
+/* ==========================================================================
+   SAHIL KESHARWANI - PERSONAL PORTFOLIO
+   Design System: Clean, Modern Light Mode (Minimalist Developer Aesthetic)
+   Tech: Pure HTML5 & CSS3 (Zero JavaScript, Zero External Frameworks)
+   ========================================================================== */
+
+/* ==========================================================================
+   1. DESIGN TOKENS (LIGHT THEME VARIABLES)
+   ========================================================================== */
+:root {
+  /* Neutral Light Color Palette */
+  --bg-main: #F8FAFC;              /* Clean subtle light canvas */
+  --bg-surface: #FFFFFF;           /* Pure white card & container surfaces */
+  --bg-surface-subtle: #F1F5F9;    /* Light gray pills & tags */
+  --bg-surface-hover: #F8FAFC;     /* Hover surface */
+  --bg-input: #FFFFFF;             /* Form input background */
+
+  /* Minimal Accents */
+  --accent-cyan: #0284C7;          /* Refined Ocean Cerulean */
+  --accent-purple: #6366F1;        /* Modern Indigo / Purple */
+
+  /* High-Contrast Typography */
+  --text-main: #0F172A;            /* Deep slate black for headings & high contrast */
+  --text-muted: #475569;           /* Secondary body slate gray */
+  --text-dim: #94A3B8;             /* Micro-copy, metadata, dividers */
+
+  /* Structural Borders */
+  --border-subtle: #E2E8F0;        /* Subtle divider & card borders */
+  --border-medium: #CBD5E1;        /* Form input & badge borders */
+  --border-hover: #0284C7;         /* Active hover/focus border */
+
+  /* Subtle Shadows for Layering */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+
+  /* Layout Constants */
+  --max-width: 1040px;             /* Compact, focused reading width */
+  --header-height: 64px;
+  --radius: 10px;
+  --radius-sm: 6px;
+
+  /* Transitions */
+  --transition: 0.18s ease;
+}
+
+/* ==========================================================================
+   2. GLOBAL RESET & BASE RULES
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 24px);
+  color-scheme: light;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-medium);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-dim);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Section Common Structure */
+.section {
+  padding: 80px 0;
+}
+
+.section-bordered {
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Section Title Label */
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.label-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.label-line {
+  width: 30px;
+  height: 1px;
+  background-color: var(--border-medium);
+}
+
+.label-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+}
+
+/* ==========================================================================
+   3. NAVIGATION BAR (Sticky, Clean White Minimalist)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--header-height);
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.accent-dot {
+  color: var(--accent-cyan);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  background-color: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.status-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #16A34A;
+}
+
+/* Navigation Links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-link {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+.nav-contact-btn {
+  color: var(--text-main);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+
+.nav-contact-btn:hover {
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}
+
+/* Mobile Hamburger Toggle (Pure CSS) */
+.nav-toggle {
+  display: none;
+}
+
+.nav-hamburger {
+  display: none;
+  cursor: pointer;
+  width: 24px;
+  height: 18px;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-hamburger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--text-main);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* ==========================================================================
+   4. HERO SECTION (Split Grid, Realistic Developer Introduction)
+   ========================================================================== */
+.hero-section {
+  padding: 70px 0 60px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.meta-divider {
+  color: var(--text-dim);
+}
+
+.hero-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  margin-bottom: 8px;
+}
+
+.highlight-text {
+  color: var(--text-main);
+}
+
+.hero-subheading {
+  font-size: 1.02rem;
+  color: var(--accent-cyan);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-subheading .dim {
+  color: var(--text-dim);
+  margin: 0 4px;
+}
+
+.hero-bio {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+/* Call to Actions */
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+  font-family: inherit;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--text-main);
+  color: #FFFFFF;
+  border-color: var(--text-main);
+}
+
+.btn-primary:hover {
+  background-color: #1E293B;
+  border-color: #1E293B;
+}
+
+.btn-secondary {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  border-color: var(--border-medium);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-surface-hover);
+  border-color: #94A3B8;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Social Links */
+.hero-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.social-link:hover {
+  color: var(--accent-cyan);
+}
+
+/* Hero Developer Card (Right Column) */
+.hero-card-col {
+  display: flex;
+  justify-content: center;
+}
+
+.developer-card {
+  width: 100%;
+  max-width: 320px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.developer-card-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background-color: #F8FAFC;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.terminal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.dot-red { background-color: #EF4444; }
+.dot-yellow { background-color: #F59E0B; }
+.dot-green { background-color: #10B981; }
+
+.terminal-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-left: 6px;
+}
+
+.developer-avatar-wrapper {
+  padding: 18px;
+  background-color: #F8FAFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.developer-avatar {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background-color: var(--bg-surface);
+}
+
+.developer-card-info {
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--border-subtle);
+  background-color: #FFFFFF;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+}
+
+.info-key {
+  color: var(--text-dim);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.info-val {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.mono-accent {
+  color: var(--accent-cyan);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ==========================================================================
+   5. ABOUT ME SECTION
+   ========================================================================== */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.about-narrative p {
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.about-narrative strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.spec-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.spec-heading {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.spec-list li {
+  display: flex;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.spec-bullet {
+  color: var(--accent-cyan);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+}
+
+.spec-list strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   6. TECHNICAL SKILLS SECTION (Clean Matrix Grid)
+   ========================================================================== */
+.skills-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skill-group {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition);
+}
+
+.skill-group:hover {
+  border-color: var(--border-medium);
+}
+
+.skill-group-wide {
+  grid-column: span 2;
+}
+
+.group-header {
+  margin-bottom: 16px;
+}
+
+.group-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+.group-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.skill-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.pill-level {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.tools-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tool-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--text-main);
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-subtle);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   7. PROJECTS SECTION (Technical Project Rows)
+   ========================================================================== */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition);
+}
+
+.project-item:hover {
+  border-color: var(--border-medium);
+}
+
+.project-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-top {
+  margin-bottom: 12px;
+}
+
+.project-category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.project-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 2px;
+}
+
+.project-summary {
+  font-size: 0.88rem;
+  color: var(--accent-purple);
+  font-weight: 600;
+}
+
+.project-details {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.project-points {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+  padding-left: 16px;
+  list-style-type: disc;
+}
+
+.project-points li {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: auto;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background-color: #F1F5F9;
+  border: 1px solid var(--border-subtle);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.project-link:hover {
+  color: var(--accent-cyan);
+}
+
+/* ==========================================================================
+   8. EDUCATION SECTION
+   ========================================================================== */
+.education-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow-sm);
+}
+
+.edu-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.edu-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--accent-cyan);
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.edu-degree {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.edu-stream {
+  font-size: 0.95rem;
+  color: var(--accent-purple);
+  font-weight: 600;
+}
+
+.edu-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: #16A34A;
+  background-color: rgba(22, 163, 74, 0.08);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.edu-institution {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.inst-icon {
+  font-size: 0.95rem;
+}
+
+.edu-text {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.coursework-section {
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.coursework-label {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-family: 'JetBrains Mono', monospace;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.course-item {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   9. ACHIEVEMENTS SECTION
+   ========================================================================== */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.achievement-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition);
+}
+
+.achievement-box:hover {
+  border-color: var(--border-medium);
+}
+
+.achievement-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.achieve-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.tag-primary {
+  color: var(--accent-cyan);
+  background-color: rgba(2, 132, 199, 0.08);
+  border: 1px solid rgba(2, 132, 199, 0.2);
+}
+
+.tag-secondary {
+  color: var(--accent-purple);
+  background-color: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+.achieve-year {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.achieve-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.achieve-org {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+}
+
+.achieve-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   10. CONTACT SECTION & CLEAN FORM
+   ========================================================================== */
+.contact-split {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact-headline {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.contact-note {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.contact-channels {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.contact-channels li {
+  display: flex;
+  flex-direction: column;
+}
+
+.channel-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.channel-val,
+.channel-link {
+  font-size: 0.92rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.channel-link:hover {
+  color: var(--accent-cyan);
+}
+
+.static-notice {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-subtle);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+}
+
+.static-notice span {
+  color: var(--accent-cyan);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+}
+
+/* Minimalist Form */
+.minimal-form {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.field-input {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.field-input::placeholder {
+  color: var(--text-dim);
+}
+
+.field-input:focus {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.12);
+}
+
+.field-textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   11. FOOTER
+   ========================================================================== */
+.site-footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 30px 0;
+  background-color: #F8FAFC;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-author {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.footer-top-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.footer-top-link:hover {
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   12. RESPONSIVENESS & MEDIA QUERIES
+   ========================================================================== */
+@media screen and (max-width: 860px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .hero-card-col {
+    order: -1;
+  }
+
+  .developer-card {
+    max-width: 280px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-matrix {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-group-wide {
+    grid-column: span 1;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  /* Mobile Menu Toggle via CSS Checkbox Hack */
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--border-medium);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    gap: 0;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-toggle:checked ~ .nav-menu {
+    max-height: 380px;
+    padding: 12px 0 20px 0;
+  }
+
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-link {
+    padding: 12px 24px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .nav-contact-btn {
+    margin: 12px 24px 0 24px;
+    text-align: center;
+  }
+
+  .project-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .hero-heading {
+    font-size: 2.1rem;
+  }
+
+  .section {
+    padding: 55px 0;
+  }
+}
+
+/* ==========================================================================
+   13. PRINT STYLESHEET (Assignment & Resume Submission Ready)
+   ========================================================================== */
+@media print {
+  body {
+    background-color: #FFFFFF !important;
+    color: #111111 !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  .site-header,
+  .hero-cta,
+  .nav-hamburger,
+  .minimal-form,
+  .footer-top-link,
+  .static-notice {
+    display: none !important;
+  }
+
+  .section {
+    padding: 24px 0 !important;
+    page-break-inside: avoid;
+  }
+
+  .developer-card,
+  .spec-card,
+  .skill-group,
+  .project-item,
+  .education-card,
+  .achievement-box {
+    background: #FFFFFF !important;
+    border: 1px solid #DDDDDD !important;
+    box-shadow: none !important;
+    color: #111111 !important;
+  }
+
+  .hero-heading,
+  .label-title,
+  .group-title,
+  .project-heading,
+  .edu-degree,
+  .achieve-title {
+    color: #000000 !important;
+  }
+
+  .tag,
+  .skill-pill,
+  .tool-tag,
+  .course-item {
+    background: #F1F5F9 !important;
+    border: 1px solid #CCCCCC !important;
+    color: #222222 !important;
+  }
+}

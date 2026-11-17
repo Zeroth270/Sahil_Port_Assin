@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Card Frame -->
+  <rect width="320" height="320" rx="16" fill="url(#bg)"/>
+  <rect width="318" height="318" x="1" y="1" rx="15" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Code header decoration -->
+  <g transform="translate(18, 18)">
+    <circle cx="6" cy="6" r="4" fill="#EF4444" opacity="0.85"/>
+    <circle cx="20" cy="6" r="4" fill="#F59E0B" opacity="0.85"/>
+    <circle cx="34" cy="6" r="4" fill="#10B981" opacity="0.85"/>
+    <text x="50" y="10" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', monospace" font-size="11">sahil-kesharwani.profile</text>
+  </g>
+
+  <line x1="1" y1="36" x2="319" y2="36" stroke="#E2E8F0" stroke-width="1"/>
+
+  <!-- Minimal Developer Badge Center -->
+  <g transform="translate(160, 160)">
+    <!-- Subtle Ambient Ring -->
+    <circle r="72" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+    <circle r="68" fill="url(#avatarGrad)"/>
+    <circle r="68" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.9"/>
+
+    <!-- Developer Monogram / Tech Icon -->
+    <path d="M -26 -12 L -40 0 L -26 12" fill="none" stroke="#0284C7" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 26 -12 L 40 0 L 26 12" fill="none" stroke="#6366F1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Stylized SK -->
+    <text x="0" y="10" fill="#0F172A" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="700" text-anchor="middle" letter-spacing="2">SK</text>
+  </g>
+
+  <!-- Status / Info pills at bottom -->
+  <g transform="translate(24, 258)">
+    <rect width="272" height="38" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+    <circle cx="16" cy="19" r="3.5" fill="#16A34A"/>
+    <text x="28" y="23" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">Full-Stack &amp; Backend Engineer</text>
+    <text x="256" y="23" fill="#0284C7" font-family="monospace" font-size="11" text-anchor="end">IIST '28</text>
+  </g>
+</svg>
+

@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Sahil Kesharwani - Computer Science Engineering Student & Full-Stack Developer specializing in Java and Spring Boot.">
+  <meta name="keywords" content="Sahil Kesharwani, Software Engineer, Java Developer, Spring Boot, Full-Stack Developer, IIST Indore">
+  <meta name="author" content="Sahil Kesharwani">
+  <title>Sahil Kesharwani | Software Developer</title>
+
+  <!-- Inline Favicon (Zero external file dependencies) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230F172A'/><text x='32' y='42' fill='%230284C7' font-family='monospace' font-size='26' font-weight='700' text-anchor='middle'>%3CS/%3E</text></svg>">
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Typography: Inter for UI & JetBrains Mono for Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ====================================================================
+       1. NAVIGATION BAR (Minimal Sticky Header with CSS-only Mobile Toggle)
+       ==================================================================== -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <!-- Minimal Monospace Brand -->
+      <a href="#home" class="brand">
+        <span class="brand-name">sahil<span class="accent-dot">.</span>dev</span>
+        <span class="status-badge" title="Open to opportunities">
+          <span class="status-pulse"></span>
+          student &amp; dev
+        </span>
+      </a>
+
+      <!-- CSS Checkbox Hack for Mobile Navigation -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+      <label for="nav-toggle" class="nav-hamburger" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#contact" class="nav-link nav-contact-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         2. HERO SECTION (Clean Split Layout, Professional Developer Tone)
+         ==================================================================== -->
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+        <!-- Hero Text -->
+        <div class="hero-intro">
+          <div class="hero-meta">
+            <span class="meta-tag">Indore, India</span>
+            <span class="meta-divider">/</span>
+            <span class="meta-role">B.Tech CSE '28</span>
+          </div>
+
+          <h1 class="hero-heading">
+            Hi, I'm <span class="highlight-text">Sahil Kesharwani</span>.
+          </h1>
+
+          <p class="hero-subheading">
+            Computer Science Engineering Student <span class="dim">|</span> Full-Stack Developer <span class="dim">|</span> Backend Developer
+          </p>
+
+          <p class="hero-bio">
+            I am a passionate Computer Science Engineering student interested in building scalable web applications 
+            and solving real-world problems through technology. I specialize in backend development and enjoy working with 
+            Java, Spring Boot, databases, and modern frontend technologies.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              View My Projects
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+          </div>
+
+          <!-- Social Handles -->
+          <div class="hero-social">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.8v8.37h-2.8v-8.37M7.86 6.5a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Card (Clean Developer Monogram Card) -->
+        <div class="hero-card-col">
+          <div class="developer-card">
+            <div class="developer-card-top">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+              <span class="terminal-title">sahil-kesharwani.profile</span>
+            </div>
+            <div class="developer-avatar-wrapper">
+              <img src="assets/profile.jpg" alt="Sahil Kesharwani" class="developer-avatar">
+            </div>
+            <div class="developer-card-info">
+              <div class="info-row">
+                <span class="info-key">Degree</span>
+                <span class="info-val">B.Tech CSE</span>
+              </div>
+              <div class="info-row">
+                <span class="info-key">Institute</span>
+                <span class="info-val">IIST Indore</span>
+              </div>
+              <div class="info-row">
+                <span class="info-key">Core Focus</span>
+                <span class="info-val mono-accent">Java &amp; Spring Boot</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. ABOUT ME SECTION (Clean Editorial Two-Column Layout)
+         ==================================================================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-label">
+          <span class="label-number">01</span>
+          <span class="label-line"></span>
+          <h2 class="label-title">About Me</h2>
+        </div>
+
+        <div class="about-layout">
+          <!-- Left Column: Story & Narrative -->
+          <div class="about-narrative">
+            <h3 class="about-title">
+              Engineering reliable backend services and practical web solutions.
+            </h3>
+            <p>
+              I am currently pursuing my <strong>Bachelor of Technology (B.Tech) in Computer Science and Engineering</strong> 
+              at the <strong>Indore Institute of Science and Technology, Indore</strong>.
+            </p>
+            <p>
+              My primary technical focus lies in <strong>Full-Stack Development</strong> with an emphasis on backend engineering. 
+              I enjoy designing RESTful APIs, configuring relational database schemas, and working with <strong>Java</strong>, 
+              <strong>Spring Boot</strong>, and related enterprise frameworks.
+            </p>
+            <p>
+              Beyond the classroom, I am passionate about problem-solving, software development, and exploring emerging tools. 
+              I value writing readable, maintainable code, understanding fundamental data structures, and architecting systems 
+              that solve practical everyday challenges.
+            </p>
+          </div>
+
+          <!-- Right Column: Structured Overview Specs -->
+          <div class="about-specs">
+            <div class="spec-card">
+              <h4 class="spec-heading">Engineering Discipline</h4>
+              <ul class="spec-list">
+                <li>
+                  <span class="spec-bullet">—</span>
+                  <div>
+                    <strong>Backend Systems:</strong> REST API architecture, service layer modularity, Spring Boot, Spring Data JPA.
+                  </div>
+                </li>
+                <li>
+                  <span class="spec-bullet">—</span>
+                  <div>
+                    <strong>Data Persistence:</strong> Schema normalization, queries, and transactions using MySQL, PostgreSQL, and Hibernate.
+                  </div>
+                </li>
+                <li>
+                  <span class="spec-bullet">—</span>
+                  <div>
+                    <strong>Frontend Integration:</strong> Semantic HTML5, responsive CSS3, and component-based client apps.
+                  </div>
+                </li>
+                <li>
+                  <span class="spec-bullet">—</span>
+                  <div>
+                    <strong>Development Workflow:</strong> Git version control, postman API validation, containerized testing.
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         4. TECHNICAL SKILLS SECTION (Clean Matrix Grid without Fake Percentages)
+         ==================================================================== -->
+    <section id="skills" class="section section-bordered">
+      <div class="container">
+        <div class="section-label">
+          <span class="label-number">02</span>
+          <span class="label-line"></span>
+          <h2 class="label-title">Technical Skills</h2>
+        </div>
+
+        <div class="skills-matrix">
+          <!-- Programming Languages -->
+          <div class="skill-group">
+            <div class="group-header">
+              <span class="group-tag">Languages</span>
+              <h3 class="group-title">Programming</h3>
+            </div>
+            <ul class="skill-pills">
+              <li class="skill-pill"><span>Java</span><span class="pill-level">Core</span></li>
+              <li class="skill-pill"><span>Python</span><span class="pill-level">Intermediate</span></li>
+              <li class="skill-pill"><span>JavaScript</span><span class="pill-level">Modern ES6+</span></li>
+              <li class="skill-pill"><span>C++</span><span class="pill-level">DSA / OOP</span></li>
+            </ul>
+          </div>
+
+          <!-- Backend -->
+          <div class="skill-group">
+            <div class="group-header">
+              <span class="group-tag">Architecture</span>
+              <h3 class="group-title">Backend &amp; APIs</h3>
+            </div>
+            <ul class="skill-pills">
+              <li class="skill-pill"><span>Spring Boot</span><span class="pill-level">Framework</span></li>
+              <li class="skill-pill"><span>Spring Data JPA</span><span class="pill-level">ORM</span></li>
+              <li class="skill-pill"><span>Hibernate</span><span class="pill-level">Persistence</span></li>
+              <li class="skill-pill"><span>REST APIs</span><span class="pill-level">HTTP/JSON</span></li>
+              <li class="skill-pill"><span>JDBC</span><span class="pill-level">Data Layer</span></li>
+            </ul>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-group">
+            <div class="group-header">
+              <span class="group-tag">Client</span>
+              <h3 class="group-title">Frontend</h3>
+            </div>
+            <ul class="skill-pills">
+              <li class="skill-pill"><span>HTML5</span><span class="pill-level">Semantic</span></li>
+              <li class="skill-pill"><span>CSS3</span><span class="pill-level">Flex/Grid</span></li>
+              <li class="skill-pill"><span>React.js</span><span class="pill-level">Components</span></li>
+              <li class="skill-pill"><span>Tailwind CSS</span><span class="pill-level">Utility</span></li>
+            </ul>
+          </div>
+
+          <!-- Database -->
+          <div class="skill-group">
+            <div class="group-header">
+              <span class="group-tag">Storage</span>
+              <h3 class="group-title">Databases</h3>
+            </div>
+            <ul class="skill-pills">
+              <li class="skill-pill"><span>MySQL</span><span class="pill-level">Relational</span></li>
+              <li class="skill-pill"><span>PostgreSQL</span><span class="pill-level">Relational</span></li>
+              <li class="skill-pill"><span>MongoDB</span><span class="pill-level">Document</span></li>
+            </ul>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-group skill-group-wide">
+            <div class="group-header">
+              <span class="group-tag">DevOps &amp; Workflow</span>
+              <h3 class="group-title">Developer Tools</h3>
+            </div>
+            <div class="tools-badges">
+              <span class="tool-tag">Git</span>
+              <span class="tool-tag">GitHub</span>
+              <span class="tool-tag">VS Code</span>
+              <span class="tool-tag">Postman</span>
+              <span class="tool-tag">Docker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         5. PROJECTS SECTION (Clean Technical Case Study Cards)
+         ==================================================================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-label">
+          <span class="label-number">03</span>
+          <span class="label-line"></span>
+          <h2 class="label-title">Featured Projects</h2>
+        </div>
+
+        <div class="projects-list">
+          <!-- Project 01 -->
+          <article class="project-item">
+            <div class="project-num">01</div>
+            <div class="project-body">
+              <div class="project-top">
+                <span class="project-category">Healthcare / Web Application</span>
+                <h3 class="project-heading">SmartMedSutra</h3>
+                <p class="project-summary">Intelligent Medication Adherence and Monitoring System</p>
+              </div>
+
+              <p class="project-details">
+                A system created to monitor prescription schedules, log medicine intake, and improve healthcare adherence. 
+                Provides automated reminders and actionable intake insights for patients and caregivers.
+              </p>
+
+              <ul class="project-points">
+                <li>Automated medication schedule tracking and scheduled reminders.</li>
+                <li>Medicine intake logging with real-time confirmation tracking.</li>
+                <li>AI-driven insights for patient adherence analysis.</li>
+              </ul>
+
+              <div class="project-meta">
+                <div class="tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Spring Boot</span>
+                  <span class="tag">MySQL</span>
+                </div>
+                <a href="#contact" class="project-link">
+                  View Project
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 02 -->
+          <article class="project-item">
+            <div class="project-num">02</div>
+            <div class="project-body">
+              <div class="project-top">
+                <span class="project-category">Computer Vision / Management System</span>
+                <h3 class="project-heading">Dharma – Smart Temple Crowd Management System</h3>
+                <p class="project-summary">Intelligent crowd control and visitor routing platform</p>
+              </div>
+
+              <p class="project-details">
+                A crowd flow optimization system tailored for large-scale temple venues. Uses computer vision to assess 
+                crowd density in real time, generate virtual wait tokens, and minimize bottleneck congestion.
+              </p>
+
+              <ul class="project-points">
+                <li>Smart crowd management and visitor density tracking.</li>
+                <li>Live queue monitoring powered by computer vision detection.</li>
+                <li>Virtual queue management tokens to eliminate physical congestion.</li>
+                <li>AI-based visitor planning and peak-time load estimation.</li>
+              </ul>
+
+              <div class="project-meta">
+                <div class="tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Python</span>
+                  <span class="tag">YOLO</span>
+                  <span class="tag">Spring Boot</span>
+                </div>
+                <a href="#contact" class="project-link">
+                  View Project
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 03 -->
+          <article class="project-item">
+            <div class="project-num">03</div>
+            <div class="project-body">
+              <div class="project-top">
+                <span class="project-category">Decentralized Systems / IoT</span>
+                <h3 class="project-heading">HoneyChain – Amrit Chakra</h3>
+                <p class="project-summary">Blockchain-powered honey traceability &amp; authenticity system</p>
+              </div>
+
+              <p class="project-details">
+                An end-to-end provenance verification system linking apiary IoT sensors with blockchain smart contracts. 
+                Allows consumers to inspect harvest origin and verify honey purity via QR verification.
+              </p>
+
+              <ul class="project-points">
+                <li>Blockchain-powered honey traceability and tamper-resistant audit logs.</li>
+                <li>QR-based product verification for end consumers.</li>
+                <li>Supply chain transparency tracking from beekeeper to shelf.</li>
+                <li>IoT-based smart beekeeping hive health telemetry.</li>
+              </ul>
+
+              <div class="project-meta">
+                <div class="tags">
+                  <span class="tag">React Native</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">PostgreSQL</span>
+                  <span class="tag">Solidity</span>
+                  <span class="tag">IoT</span>
+                </div>
+                <a href="#contact" class="project-link">
+                  View Project
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         6. EDUCATION SECTION (Clean Academic Record Card)
+         ==================================================================== -->
+    <section id="education" class="section section-bordered">
+      <div class="container">
+        <div class="section-label">
+          <span class="label-number">04</span>
+          <span class="label-line"></span>
+          <h2 class="label-title">Education</h2>
+        </div>
+
+        <div class="education-card">
+          <div class="edu-header">
+            <div>
+              <span class="edu-date">September 2024 – November 2028</span>
+              <h3 class="edu-degree">Bachelor of Technology (B.Tech)</h3>
+              <p class="edu-stream">Computer Science and Engineering</p>
+            </div>
+            <span class="edu-badge">In Progress</span>
+          </div>
+
+          <div class="edu-institution">
+            <span class="inst-icon">📍</span>
+            Indore Institute of Science and Technology, Indore, Madhya Pradesh
+          </div>
+
+          <p class="edu-text">
+            Undergraduate engineering curriculum emphasizing computer science fundamentals, data structures, 
+            object-oriented software design in Java, algorithms analysis, relational databases, computer networks, 
+            and modern software engineering methodologies.
+          </p>
+
+          <div class="coursework-section">
+            <span class="coursework-label">Core Coursework:</span>
+            <div class="course-list">
+              <span class="course-item">Data Structures &amp; Algorithms</span>
+              <span class="course-item">Object-Oriented Programming (Java)</span>
+              <span class="course-item">Database Management Systems</span>
+              <span class="course-item">Computer Networks</span>
+              <span class="course-item">Operating Systems</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         7. ACHIEVEMENTS SECTION (Understated, Minimal Credential Cards)
+         ==================================================================== -->
+    <section id="achievements" class="section">
+      <div class="container">
+        <div class="section-label">
+          <span class="label-number">05</span>
+          <span class="label-line"></span>
+          <h2 class="label-title">Achievements</h2>
+        </div>
+
+        <div class="achievements-grid">
+          <!-- Achievement 1 -->
+          <div class="achievement-box">
+            <div class="achievement-header">
+              <span class="achieve-tag tag-primary">National Finalist</span>
+              <span class="achieve-year">2025</span>
+            </div>
+            <h3 class="achieve-title">Smart India Hackathon 2025</h3>
+            <p class="achieve-org">Ministry of Education, Govt. of India</p>
+            <p class="achieve-desc">
+              Selected as a national finalist among nationwide university teams for developing a technical solution 
+              addressing critical public-sector problem statements.
+            </p>
+          </div>
+
+          <!-- Achievement 2 -->
+          <div class="achievement-box">
+            <div class="achievement-header">
+              <span class="achieve-tag tag-secondary">93% Examination Score</span>
+              <span class="achieve-year">Certification</span>
+            </div>
+            <h3 class="achieve-title">NPTEL Certification</h3>
+            <p class="achieve-org">National Programme on Technology Enhanced Learning (IITs &amp; IISc)</p>
+            <p class="achieve-desc">
+              Completed advanced technical coursework with an examination score of 93%, demonstrating academic 
+              proficiency in computer science principles and software practices.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         8. CONTACT SECTION (Clean Minimalist Form & Contact Coordinates)
+         ==================================================================== -->
+    <section id="contact" class="section section-bordered">
+      <div class="container">
+        <div class="section-label">
+          <span class="label-number">06</span>
+          <span class="label-line"></span>
+          <h2 class="label-title">Get In Touch</h2>
+        </div>
+
+        <div class="contact-split">
+          <!-- Contact Coordinates -->
+          <div class="contact-left">
+            <h3 class="contact-headline">Let's discuss projects, internships, or engineering ideas.</h3>
+            <p class="contact-note">
+              I am open to internship opportunities, technical collaborations, and software development discussions.
+            </p>
+
+            <ul class="contact-channels">
+              <li>
+                <span class="channel-label">Location</span>
+                <span class="channel-val">Indore, India</span>
+              </li>
+              <li>
+                <span class="channel-label">Email</span>
+                <a href="mailto:sahilkesharwani.dev@gmail.com" class="channel-link">sahilkesharwani.dev@gmail.com</a>
+              </li>
+              <li>
+                <span class="channel-label">LinkedIn</span>
+                <a href="https://linkedin.com/in/sahil-kesharwani" target="_blank" rel="noopener noreferrer" class="channel-link">linkedin.com/in/sahil-kesharwani</a>
+              </li>
+              <li>
+                <span class="channel-label">GitHub</span>
+                <a href="https://github.com/sahilkesharwani" target="_blank" rel="noopener noreferrer" class="channel-link">github.com/sahilkesharwani</a>
+              </li>
+            </ul>
+
+            <div class="static-notice">
+              <span>Notice:</span> This is a static college assignment portfolio created with pure HTML5 &amp; CSS3.
+            </div>
+          </div>
+
+          <!-- Pure HTML5 Form UI -->
+          <div class="contact-right">
+            <form action="#contact" method="GET" class="minimal-form">
+              <div class="field-group">
+                <label for="name" class="field-label">Your Name</label>
+                <input type="text" id="name" name="name" class="field-input" placeholder="e.g. Jane Doe" required autocomplete="name">
+              </div>
+
+              <div class="field-group">
+                <label for="email" class="field-label">Email Address</label>
+                <input type="email" id="email" name="email" class="field-input" placeholder="e.g. jane@example.com" required autocomplete="email">
+              </div>
+
+              <div class="field-group">
+                <label for="subject" class="field-label">Subject</label>
+                <input type="text" id="subject" name="subject" class="field-input" placeholder="e.g. Internship Inquiry / Project" required>
+              </div>
+
+              <div class="field-group">
+                <label for="message" class="field-label">Message</label>
+                <textarea id="message" name="message" rows="4" class="field-input field-textarea" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                Submit Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====================================================================
+       9. FOOTER (Minimal & Understated)
+       ==================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-author">Designed &amp; Developed by Sahil Kesharwani</span>
+        <span class="footer-copy">&copy; 2026 All Rights Reserved.</span>
+      </div>
+      <a href="#home" class="footer-top-link">
+        Back to top
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
